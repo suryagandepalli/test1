@@ -5,3 +5,17 @@ Install ChefDK
 	chef --version
 	sudo apt-get install nano 
 	
+1.	Setup working directory (ssh)
+	a.	mkdir ~/chef-repo
+	b.	cd ~/chef-repo
+	c.	create hello.rb in chef-repo
+	file '/tmp/hello.txt’ do
+		content 'hello world'
+	end
+	d.	sudo chef-apply hello.rb
+	e.	cat /tmp/hello.txt
+	2.	modify hello.rb to change content and run the same command again and observe messages + modified files
+	3.	try creating bye.rb and test
+		file '/tmp/motd' do
+			action :delete
+		end
